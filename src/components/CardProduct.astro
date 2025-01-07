@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  image: string;
+  price: string;
+  buttonText: string;
+}
+
+const { title, image, price, buttonText } = Astro.props;
+---
+
+<div class="bg-white shadow-md rounded-xl p-12 max-w-sm text-center">
+  <!-- Imagen del producto -->
+  <img src={image} alt={title} class="w-32 h-32 mx-auto mb-4" />
+
+  <!-- Título del producto -->
+  <h2 class="text-xl font-bold text-black">{title}</h2>
+
+  <!-- Precio del producto -->
+  <p class="text-2xl font-semibold text-primary mt-2">{price}/mes</p>
+
+  <!-- Botón de compra -->
+  <button class="bg-primary text-white py-2 px-6 rounded-full font-medium hover:bg-primary-dark transition mt-4">
+    {buttonText}
+  </button>
+</div>

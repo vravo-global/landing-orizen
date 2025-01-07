@@ -1,0 +1,76 @@
+---
+import Card from "../Card.astro";
+import CardProduct from "../CardProduct.astro";
+import image_product from "../../assets/images/Orizen.png";
+
+const freePlan = {
+    name: "Free",
+    price: "$0/Mes",
+    description:
+        "Ideal para usuarios que quieran iniciarse en el monitoreo de datos fisiológicos.",
+    features: [
+        "Monitorea ritmo cardíaco, tensión muscular y calidad del sueño a través del wearable.",
+        "Visualización de gráficas de HRV, EMG y las 5 fases del sueño con calificación.",
+        "Conexión y sincronización de datos entre el wearable y la aplicación vía Bluetooth.",
+        "Acceso a recomendaciones personalizadas en la vista de inicio.",
+        "Vista de perfil con edición de datos básicos del usuario.",
+        "Compatibilidad con dispositivos Android e iOS.",
+    ],
+    buttonText: "Descargar",
+    footerText: "El precio está en CLP por mes.",
+};
+const biofeedbackPlan = {
+    name: "Biofeedback",
+    price: "$20.000/Mes",
+    description:
+        "Optimiza tu bienestar con intervenciones en tiempo real y análisis avanzado de datos fisiológicos.",
+    features: [
+        "Incluye todas las funcionalidades del plan Free.",
+        "Sincronización automática de datos a una nube segura para almacenamiento y análisis.",
+        "Notificaciones avanzadas con intervenciones personalizadas en tiempo real.",
+        "Predicción de episodios de dolor en menos de 5 segundos con un 95% de precisión.",
+        "Capacidad para monitorizar hasta 3 usuarios externos simultáneamente.",
+        "Descarga de reportes fisiológicos personalizados en formato PDF.",
+    ],
+    buttonText: "Suscribirse",
+    footerText: "El precio está en CLP por mes.",
+};
+const enterprisePlan = {
+    name: "Enterprise",
+    price: "Consultar",
+    description:
+        "Soluciones avanzadas de monitoreo y gestión para entornos clínicos y empresariales.",
+    features: [
+        "Incluye todas las funcionalidades de los planes Free y Biofeedback.",
+        "Dashboard clínico centralizado con actualización en tiempo real (menos de 1 segundo).",
+        "Monitoreo ilimitado de dispositivos mediante acuerdos personalizados.",
+        "Descarga de informes detallados desde el Dashboard en formato PDF.",
+        "Servidor local con modelos de Deep Learning para predicción precisa de episodios de dolor.",
+    ],
+    buttonText: "Contáctanos",
+    footerText: "Ponte en contacto para obtener una cotización personalizada.",
+};
+---
+
+<section>
+    <div class="p-8 flex flex-col items-center gap-8">
+        <div class="px-4 bg-secondary py-2 rounded-full w-96">
+            <h1 class="text-4xl font-bold text-center text-white">
+                Planes y Precios
+            </h1>
+        </div>
+        <div class="py-5 flex justify-center items-center">
+            <CardProduct
+                title="Orizen"
+                image={image_product.src}
+                price="$269.990"
+                buttonText="Comprar"
+            />
+        </div>
+        <div class="flex flex-row w-full justify-center gap-4">
+            <Card {...freePlan} />
+            <Card {...biofeedbackPlan} />
+            <Card {...enterprisePlan} />
+        </div>
+    </div>
+</section>
